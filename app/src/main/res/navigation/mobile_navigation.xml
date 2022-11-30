@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.bottomnavigationtest.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_middle"
+            app:destination="@id/navigation_middle" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_last"
+            app:destination="@id/navigation_last" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_middle"
+        android:name="com.example.bottomnavigationtest.ui.MiddleHomeFragment"
+        android:label="Middle Home Fragment"
+        tools:layout="@layout/fragment_middle_home">
+        <action
+            android:id="@+id/action_navigation_middle_to_navigation_last"
+            app:destination="@id/navigation_last" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_last"
+        android:label="Last Home Fragment"
+        android:name="com.example.bottomnavigationtest.ui.LastHomeFragment"
+        tools:layout="@layout/fragment_last_home"/>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.bottomnavigationtest.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.bottomnavigationtest.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+</navigation>
